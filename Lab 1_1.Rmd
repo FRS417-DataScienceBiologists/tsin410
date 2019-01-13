@@ -1,0 +1,38 @@
+---
+title: "Lab 1_1"
+author: "Tiffany Sin"
+date: "1/11/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+getwd()
+```
+```{r}
+## Download and install the tidyverse
+This is where Ledford told us to install the tidyverse
+```
+```{r}
+install.packages("tidyverse")
+```
+```{r}
+getwd()
+```
+```{r}
+install.packages("nycflights13")
+```
+```{r}
+library(nycflights13)
+library(tidyverse)
+```
+```{r}
+flights
+```
+```{r}
+filter(flights, month==1, day==11)
+```
+
