@@ -1,0 +1,64 @@
+---
+title: "HW_2"
+author: "Tiffany Sin"
+date: "1/28/2019"
+output:
+  html_document: default
+  pdf_document: default
+---
+```{r}
+library("tidyverse")
+```
+```{r}
+msleep
+```
+1. From which publication are these data taken from? 
+```{r}
+?msleep
+```
+
+2. Provide some summary information about the data to get you started.
+```{r}
+names(msleep)
+glimpse(msleep)
+```
+3. Make a new data frame focused on body weight, but be sure to indicate the common name and genus of each mammal.
+```{r}
+msleep %>% 
+  select(name, genus, bodywt) %>% 
+  arrange(desc(bodywt))
+```
+4. We are interested in two groups; small and large mammals. Let's define small as less than or equal to 1 kg body weight and large as greater than or equal to 200kg body weight. For our study, we are interested in body weight and sleep total. Make two new dataframes (large and small) based on these parameters.
+```{r}
+large <- msleep %>% 
+  select(name, genus, bodywt, sleep_total) %>% 
+  filter(bodywt>=200) %>% 
+  arrange(desc(bodywt))
+large
+```
+```{r}
+small<- msleep %>% 
+  select(name, genus, bodywt, sleep_total) %>% 
+  filter(bodywt <= 1) %>% 
+  arrange(desc(bodywt))
+small
+```
+
+5. Let's try to figure out if large mammals sleep, on average, longer than small mammals. What is the average sleep duration for large mammals as we have defined them?
+```{r}
+mean(large$sleep_total)
+```
+6. What is the average sleep duration for small mammals as we have defined them?
+```{r}
+mean(small$sleep_total)
+```
+
+7. Which animals sleep at least 18 hours per day? Be sure to show the name, genus, order, and sleep total. 
+```{r}
+msleep %>% 
+  filter(sleep_total>=18) %>% 
+  select(name, genus, order, sleep_total) %>% 
+  arrange(order, sleep_total)
+```
+
+
