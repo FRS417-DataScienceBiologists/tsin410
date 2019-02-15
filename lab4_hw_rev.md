@@ -356,7 +356,7 @@ life_history %>%
 ## 16 Lagomorpha               1.18             57.0           715.     42
 ## 17 Insectivora              1.15              6.06           33.1    91
 ```
-
+##Proboscidea has the longest gestation. These are elephants
 
 ## Push your final code to [GitHub](https://github.com/FRS417-DataScienceBiologists)
 Make sure that you push your code into the appropriate folder. Also, be sure that you have check the `keep md` file in the knit preferences.
